@@ -20,7 +20,7 @@
    $row=mysqli_fetch_assoc($result);
    $newkey = intval($row["maxid"]) + 1;
    $movieID = (string)$newkey;
-   $query = 'insert into Movies values("' . $movieID . '","' . $movieName . '","'$
+   $query = 'insert into Movies values("' . $movieID . '","' . $movieName . '","' . $movieYear . '")';
    if (!mysqli_query($connection, $query)) {
         die("Error: insert failed" . mysqli_error($connection));
     }
