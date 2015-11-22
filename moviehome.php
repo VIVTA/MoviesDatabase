@@ -30,6 +30,13 @@ New Movie ID: <input type="text" name="MovieID"><br>
 New Movie Year: <input type="text" name="MovieYear"><br>
 <input type="submit" value="Add New Movie">
 </form>
+<h2> DELETE A NEW MOVIE:</h2>
+<form action="deletemovie.php" method="post">
+Movie Name: <input type="text" name="MovieName"><br>
+Movie ID: <input type="text" name="MovieID"><br>
+Movie Year: <input type="text" name="MovieYear"><br>
+<input type="submit" value="Delete Movie">
+</form>
 <?php
 mysqli_close($connection);
 ?>
