@@ -17,7 +17,7 @@ include 'connectdb.php';
 <hr>
 <p>
 <h2> ADD A NEW SHOWING:</h2>
-<form action="addnewmovie.php" method="post">
+<form action="addnewshowing.php" method="post">
 New Showing ID: <input type="text" name="ShowingID"><br>
 New Date: <input type="text" name="Date"><br>
 New Time: <input type="text" name="Time"><br>
