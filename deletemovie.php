@@ -1,26 +1,26 @@
 
+<?php
+   function IsChecked($chkname,$connection)  {
 
-<!DOCTYPE html>
-<html>
-<body>
-<?php
+           if (!empty($_POST[$chkname]))  {
+                   foreach($_POST[$chkname] as $value) {
+                           $delsql="delete from Movies where MovieID='" . $value $
+                           deleteMovie($delsql,$connection);
+                   }
+           }
+   }
+
+   function deleteMovie($deleteCommand,$conn) {
+      if (mysqli_query($conn,$deleteCommand)) {
+           echo "<h2>Movies deleted successfully</h2>";
+      } else {
+           echo "<p>Problem with deleting movie: " . mysqli_error($conn) . "</p>";
+      }
+    } //end of deleteMovie function
    include 'connectdb.php';
-?>
-<h1>Here are your movies:</h1>
-<ol>
-<?php
-   $movieName= $_POST["MovieName"];
-   $movieID = $_POST["MovieID"];
-   $movieYear =$_POST["MovieYear"];
-   $query = 'delete from Movies where (MovieID="' . $movieID . '")';
-   if (!mysqli_query($connection, $query)) {
-        die("Error: insert failed" . mysqli_error($connection));
-    }
-   echo "Your movie was deleted!";
+   IsChecked('themovies',$connection);
    mysqli_close($connection);
 ?>
-</ol>
-</body>
-</html>
+
 
 
