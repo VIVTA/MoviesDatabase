@@ -10,6 +10,9 @@ create table TheatreRooms (RoomNumber int not null, Capacity int, primary key(Ro
 create table Showings (ShowingID int(3) not null, Date date, Time time, MovieID int(3) not null, RoomNumber int not null, primary key(ShowingID), foreign key(RoomNumber) references TheatreRooms(RoomNumber), foreign key(MovieID) references Movies(MovieID));
 create table MovieGenres (MovieID int(3) not null, Genre varchar(30) not null, primary key(MovieID, Genre), foreign key(MovieID) references Movies(MovieID));
 create table Selection (CustomerID int(3) not null, ShowingID int(3) not null, Price decimal(13,2), Rating int(1), primary key(CustomerID,ShowingID), foreign key(CustomerID) references Customers(CustomerID), foreign key(ShowingID) references Showings(ShowingID));
-alter table Showings add constraint showingsvalid foreign key(RoomNumber) references TheatreRooms(RoomNumber) on delete restrict;
 alter table Selection add constraint ticketvalid foreign key(CustomerID) references Customers(CustomerID) on delete cascade;
+alter table MovieGenres add constraint moviesvalid1 foreign key(MovieID) references Movies(MovieID) on delete cascade;
+alter table Showings add constraint moviesvalid2 foreign key(MovieID) references Movies(MovieID) on delete cascade;
+alter table Showings add constraint roomsvalid foreign key(RoomNumber) references TheatreRooms(RoomNumber) on delete cascade;
+alter table Selection add constraint showingsvalid foreign key(ShowingID) references Showings(ShowingID) on delete cascade;
 show tables;
