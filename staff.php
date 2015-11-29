@@ -52,7 +52,8 @@
 <br>
 <h2>Delete Movies</h2>
 <!-- deletemovies.php will display a table of movies with a checkbox column added on the left. The user checks off movies to delete and then clicks the Delete Selected Movies button. -->
-<form action="deletemovies.php" method="GET">
+<form action="choosemovies.php" method="POST">
+    <input type="hidden" name="method" value="Delete">
     <input type="submit" value="Choose Movies to Delete">
 </form>
 <br>
