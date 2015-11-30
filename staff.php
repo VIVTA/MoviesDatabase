@@ -96,6 +96,13 @@
     <input type="submit" value="Add Movies">
 </form>
 
+<br>
+<h2>Update Movies</h2>
+<form action="choosemovies.php" method="POST">
+    <input type="hidden" name="method" value="Update">
+    <input type="submit" value="Choose Movies to Update">
+</form>
+
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
     $(document).ready(function(){
