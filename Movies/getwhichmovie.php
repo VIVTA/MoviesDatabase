@@ -1,7 +1,7 @@
 <?php
    include 'connectdb.php';
    foreach($_POST['themovies'] as $checkbox){
-        $selected_movie = $checkbox;
+	$selected_movie = $checkbox;
    }
    $query = "Select * from Movies where MovieID='" . $selected_movie . "';";
    $result = mysqli_query($connection,$query);
@@ -13,6 +13,4 @@
    $movieyear = $row["Year"];
    mysqli_close($connection);
 ?>
-
-
 

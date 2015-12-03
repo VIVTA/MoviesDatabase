@@ -3,7 +3,7 @@
    $newyear = $_POST['movyear'];
    $newtitle = $_POST['movtitle'];
    $movieid = $_POST['movid'];
-   $query = 'Update Movies set MovieName="' . $newtitle . '", Year=' . $newyear .$
+   $query = 'Update Movies set MovieName="' . $newtitle . '", Year=' . $newyear . " where MovieID='" . $movieid . "';";
    echo $query;
    $result = mysqli_query($connection,$query);
    if (!$result) {
@@ -16,5 +16,3 @@
    }
    mysqli_close($connection);
 ?>
-
-

@@ -54,8 +54,8 @@
 <div id="tabs">
   <ul>
     <li><a href="#tabs-1">Movies</a></li>
-    <li><a href="#tabs-2">Showings</a></li>
-    <li><a href="#tabs-3">Theatre Rooms</a></li>
+    <li><a href="#tabs-2">Theatre Rooms</a></li>
+    <li><a href="#tabs-3">Showings</a></li>
   </ul>
   <div id="tabs-1">
     <h2>List Movies</h2>
@@ -67,47 +67,15 @@
       <input type="submit" value="Submit">
     </form>
     <br>
-
+    <h2>Add Movies</h2>
+    <form action="addmoviesform.php" method="POST">
+    <input type="submit" value="Add Movies">
+    </form>
+    <br>
     <h2>Delete Movies</h2>
     <form action="choosemovies.php" method="POST">
     <input type="hidden" name="method" value="Delete">
     <input type="submit" value="Choose Movies to Delete">
-    </form>
-    
-    <h2>Add Movies</h2>
-    <form action="addmovies.php" method="POST">
-        <table>
-            <thead align="left">
-                <th><label>Title*</label><br></th>
-                <th><label>Year</label><br></th>
-                <th><label>Genre(s)</label><br></th>
-            </thead>
-            <tbody id="add-movies">
-                            <tr>
-                    <td><input type="text" placeholder="Title" name="movie_title[]" required="required" maxlength="50"></td>
-                    <td><input type="text" placeholder="Year" name="movie_year[]" size="4" maxlength="4"></td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td><input type="checkbox" name="movie-genre[]" value="Action"> Action</td>
-                                <td><input type="checkbox" name="movie-genre[]" value="Animated"> Animated</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" name="movie-genre[]" value="Comedy"> Comedy</td>
-                                <td><input type="checkbox" name="movie-genre[]" value="Drama"> Drama</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" name="movie-genre[]" value="Romance"> Romance</td>
-                                <td><input type="checkbox" name="movie-genre[]" value="SciFi"> SciFi</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td><input type="button" value="-" class="round-button" disabled="disabled"> <input type="button" value="+" class="round-button"></td>
-                </tr>
-            </tbody>
-        </table>
-        <p class="caption">* Required</p>
-        <input type="submit" value="Add Movies">
     </form>
     <br>
     <h2>Update Movies</h2>
@@ -118,8 +86,50 @@
   
   </div>
   <div id="tabs-2">
-  </div>
+  <h2>List Rooms</h2>
+    <form action="listrooms.php" method="POST">
+    <input type="submit" value="Show Rooms">
+    </form>
+  <br>
+  <h2>Add Rooms</h2>
+    <form action="addroomsform.php" method="POST">
+    <input type="submit" value="Add Rooms">
+    </form>
+  <br> 
+  <h2>Delete Rooms</h2>
+    <form action="chooserooms.php" method="POST">
+    <input type="hidden" name="method" value="Delete">
+    <input type="submit" value="Choose Rooms to Delete">
+    </form>
+  <br>
+  <h2>Update Rooms</h2>
+    <form action="chooserooms.php" method="POST">
+    <input type="hidden" name="method" value="Update">
+    <input type="submit" value="Choose Rooms to Update">
+    </form>
+</div>
   <div id="tabs-3">
+  <h2>List Showings</h2>
+    <form action="listshowings.php" method="POST">
+    <input type="submit" value="Show Showings">
+    </form>
+  <br>
+  <h2>Add Showings</h2>
+    <form action="addshowingsform.php" method="POST">
+    <input type="submit" value="Add Showings">
+    </form>
+  <br>
+  <h2>Delete Showings</h2>
+    <form action="chooseshowings.php" method="POST">
+    <input type="hidden" name="method" value="Delete">
+    <input type="submit" value="Choose Showings to Delete">
+    </form>
+  <br>
+  <h2>Update Showings</h2>
+    <form action="chooseshowings.php" method="POST">
+    <input type="hidden" name="method" value="Update">
+    <input type="submit" value="Choose Showings to Update">
+    </form>
   </div>
 </div>
 
