@@ -57,6 +57,29 @@
     <input type="submit" value="Choose Movies to Delete">
 </form>
 <br>
+<h2>Update Movies</h2>
+<!-- deletemovies.php will display a table of movies with a checkbox column added on the left. The user checks off movies to delete and then clicks the Delete Selected Movies button. -->
+<form action="updatemovie.php" method="POST">
+    <select name="update-movie-select">
+        <option>Select a movie...</option>
+        <?php 
+            include 'connectdb.php';
+            
+            $result = mysqli_query($connection, 'SELECT MovieID, MovieName FROM Movies ORDER BY MovieName');
+            
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<option value="' . $row['MovieID'] . '">' . $row['MovieName'] . '</option>';
+                }
+            }
+                        
+            mysqli_close($connection);
+        ?>
+    </select>
+    <input type="submit" value="Update">
+</form>
+<br>
 <h2>Add Movies</h2>
 <form action="addmovies.php" method="POST">
     <table>
