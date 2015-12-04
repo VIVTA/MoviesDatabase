@@ -1,6 +1,7 @@
 <!DOCTYPE html> <html lang="en-US"> <head>
     <meta charset="UTF-8">
     <title>PSC - Staff : <?php echo($_POST['method']) ?> Movies</title> </head> <body> <h1>PSC - Staff Access : <?php echo($_POST['method']) ?> Movies</h1> <hr>
+    <link rel="stylesheet" href="style2.css">
 <?php  include 'connectdb.php';
     
     if (isset($_POST['method'])) {

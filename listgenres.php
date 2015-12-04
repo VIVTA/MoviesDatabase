@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PSC - Staff : List Movie Genres</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 <h1>PSC - Staff Access : List Movie Genres</h1>

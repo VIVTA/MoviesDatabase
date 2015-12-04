@@ -1,6 +1,12 @@
-<!DOCTYPE html> <html lang="en-US"> <head>
+<!DOCTYPE html> <html lang="en-US"> 
+<head>
     <meta charset="UTF-8">
-    <title>PSC - Staff : <?php echo($_POST['method']) ?> Movie Genres</title> </head> <body> <h1>PSC - Staff Access : <?php echo($_POST['method']) ?> Movie Genres</h1> <hr> 
+    <title>PSC - Staff : <?php echo($_POST['method']) ?> Movie Genres</title> 
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body> <h1>PSC - Staff Access : <?php echo($_POST['method']) ?> Movie Genres</h1> <hr> 
+
 <?php  include 'connectdb.php';
     if (isset($_POST['method'])) {
          $result = mysqli_query($connection, 'SELECT * FROM MovieGenres,Movies where MovieGenres.MovieID=Movies.MovieID');

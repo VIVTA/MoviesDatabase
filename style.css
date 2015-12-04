@@ -1,0 +1,82 @@
+html {
+	background-color: black;
+}
+
+body {
+	background-color: #111;
+	width: 1000px;
+	border: thin solid #444;
+	border-radius: 5px;
+	margin: 20px auto;
+	padding: 20px;
+	color: white;
+	font-family: -apple-system, Helvetica;
+	font-size: 0.8em;
+}
+
+h1 {
+	font-weight: bold;
+	color: #Fd4;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: #FD4;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: #FE7;
+    text-decoration: underline;
+}
+
+hr {
+	border: thin solid #444;
+}
+
+div.stars{
+    width: 135px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input.star{
+    display: none;
+}
+
+label.star {
+    float: right;
+    padding: 5px;
+    font-size: 18px;
+    color: #444;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+input.star:checked ~ label.star:before {
+    content:'\f005';
+    color: #FD4;
+    text-shadow: 0 0 10px #FE7;
+    transition: all .25s;
+}
+
+label.star:hover{
+    transform: rotate(-15deg) scale(1.3);
+}
+
+label.star:before{
+    content:'\f006';
+    font-family: FontAwesome;
+}
+
+#bin {
+    display: none;
+}

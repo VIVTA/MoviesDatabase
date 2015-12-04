@@ -1,6 +1,13 @@
-<!DOCTYPE html> <html lang="en-US"> <head>
+<!DOCTYPE html> <html lang="en-US"> 
+<head>
     <meta charset="UTF-8">
-    <title>PSC - Staff : <?php echo($_POST['method']) ?> Showings</title> </head> <body> <h1>PSC - Staff Access : <?php echo($_POST['method']) ?> Showings</h1> <hr> <?php include 'connectdb.php';
+    <title>PSC - Staff : <?php echo($_POST['method']) ?> Showings</title> 
+    <link rel="stylesheet" href="style2.css">
+</head> 
+<body> 
+<h1>PSC - Staff Access : <?php echo($_POST['method']) ?> Showings</h1> <hr> 
+
+<?php include 'connectdb.php';
     
     if (isset($_POST['method'])) {
             $result = mysqli_query($connection, 'SELECT * FROM Showings');

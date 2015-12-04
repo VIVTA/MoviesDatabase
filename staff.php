@@ -3,40 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>PSC-Staff</title>
-  <style>
-        .round-button {
-            background-color: white;
-            border-radius: 50%;
-            border: 1px solid #D8D8D8;
-            box-shadow: 0px 1px 1px 0px #eee;
-            width: 2em;
-            height: 2em;
-        }
-        
-        .round-button:active {
-            background: linear-gradient(to bottom, #78B1F9 0%, #3979FE 100%);
-            border-color: #eee;
-        }
-        
-        .round-button[disabled="disabled"] {
-            opacity: 0.5;
-        }
-        
-        .round-button[disabled="disabled"]:active {
-            background: white;
-            border-color: #D8D8D8;
-        }
-        
-        .caption {
-            font-size: 0.9em;
-            color: red;
-            margin: 0.5em 0;
-        }
-        
-        tr {
-            vertical-align: top;
-        }
-  </style>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>

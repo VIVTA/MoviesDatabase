@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PSC - Staff : Delete Showings</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 <h1>PSC - Staff Access : Delete Showings</h1>

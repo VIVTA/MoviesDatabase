@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PSC - Staff : List Rooms</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 <h1>PSC - Staff Access : List Rooms</h1>

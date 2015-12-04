@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PSC - Staff : Update Room</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 <h1>PSC - Staff Access : Update Room</h1>
@@ -10,10 +11,7 @@
 <?php
     include 'getwhichroom.php';
 ?>
-<h2>Update Theatre Room <?php echo $selected_room ?> </h2>
-
 <form  action="updatearoom.php" method="post">
-<br>
 <h2>Update Room Number <?php echo $selected_room ?> </h2>
 Room Capacity: <input type="number" name="roomcap" value="<?php echo ( htmlspecialchars( $roomcapacity)); ?>" />
 <br>
