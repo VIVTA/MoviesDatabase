@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>PSC - Staff</title>
-    <style>
+  <meta charset="utf-8">
+  <title>PSC-Staff</title>
+  <style>
         .round-button {
             background-color: white;
             border-radius: 50%;
@@ -36,88 +36,144 @@
         tr {
             vertical-align: top;
         }
-    </style>
+  </style>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
 </head>
 <body>
+
 <h1>PSC - Staff Access</h1>
-<hr>
-<h2>List Movies</h2>
-<form action="listmovies.php" method="POST">
-    By <select name="order-by">
+ 
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Movies</a></li>
+    <li><a href="#tabs-2">Movie Genres</a></li> 
+    <li><a href="#tabs-3">Theatre Rooms</a></li>
+    <li><a href="#tabs-4">Showings</a></li>
+    <li><a href="#tabs-5">Customers</a></li>
+  </ul>
+  <div id="tabs-1">
+    <h2>List Movies</h2>
+    <form action="listmovies.php" method="POST">
+      By <select name="order-by">
         <option value="year">Year</option>
         <option value="alphabetically">Name (alphabetically)</option>
-    </select>
-    <input type="submit" value="Submit">
-</form>
-<br>
-<h2>Delete Movies</h2>
-<!-- deletemovies.php will display a table of movies with a checkbox column added on the left. The user checks off movies to delete and then clicks the Delete Selected Movies button. -->
-<form action="choosemovies.php" method="POST">
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    <h2>Add Movies</h2>
+    <form action="addmoviesform.php" method="POST">
+    <input type="submit" value="Add A New Movie">
+    </form>
+    <br>
+    <h2>Delete Movies</h2>
+    <form action="choosemovies.php" method="POST">
     <input type="hidden" name="method" value="Delete">
-    <input type="submit" value="Choose Movies to Delete">
-</form>
-<br>
-<h2>Add Movies</h2>
-<form action="addmovies.php" method="POST">
-    <table>
-        <thead align="left">
-            <th><label>Movie ID*</label><br></th>
-            <th><label>Title*</label><br></th>
-            <th><label>Year</label><br></th>
-            <th><label>Genre(s)</label><br></th>
-        </thead>
-        <tbody id="add-movies">
-            <!-- Pressing the plus button adds a new set of inputs for another record. The name[] notation will create an array that can be iterated through in PHP to add any number of movies at once. The condition NOT NULL is checked here with the required attribute, but will also be checked with PHP before the SQL is sent to the server. -->
-            <tr>
-                <td><input type="text" placeholder="Movie ID" name="movie-id[]" required="required" maxlength="3"></td>
-                <td><input type="text" placeholder="Title" name="movie-title[]" required="required" maxlength="50"></td>
-                <td><input type="text" placeholder="Year" name="movie-year[]" size="4" maxlength="4"></td>
-                <td>
-                    <table>
-                        <tr>
-                            <td><input type="checkbox" name="movie-genre[]" value="Action"> Action</td>
-                            <td><input type="checkbox" name="movie-genre[]" value="Animated"> Animated</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="movie-genre[]" value="Comedy"> Comedy</td>
-                            <td><input type="checkbox" name="movie-genre[]" value="Drama"> Drama</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="movie-genre[]" value="Romance"> Romance</td>
-                            <td><input type="checkbox" name="movie-genre[]" value="SciFi"> SciFi</td>
-                        </tr>
-                    </table>
-                </td>
-                <td><input type="button" value="-" class="round-button" disabled="disabled"> <input type="button" value="+" class="round-button"></td>
-            </tr>
-        </tbody>
-    </table>
-    <p class="caption">* Required</p>
-    <input type="submit" value="Add Movies">
-</form>
-
-<br>
-<h2>Update Movies</h2>
-<form action="choosemovies.php" method="POST">
+    <input type="submit" value="Choose Movie to Delete">
+    </form>
+    <br>
+    <h2>Update Movies</h2>
+    <form action="choosemovies.php" method="POST">
+        <input type="hidden" name="method" value="Update">
+        <input type="submit" value="Choose Movie to Update">
+    </form>
+  </div>
+  <div id="tabs-2">
+    <h2>List Movie Genres</h2>
+    <form action="listgenres.php" method="POST">
+    <input type="submit" value="List Movie Genres">
+    </form>
+    <br>
+    <h2>Add Movie Genres</h2>
+    <form action="addgenresform.php" method="POST">
+    <input type="submit" value="Add A Movie Genre">
+    </form>
+    <br>
+    <h2>Delete Movie Genres</h2>
+    <form action="choosegenres.php" method="POST">
+    <input type="hidden" name="method" value="Delete">
+    <input type="submit" value="Choose Movie Genre to Delete">
+    </form>
+  </div>
+  <div id="tabs-3">
+  <h2>List Rooms</h2>
+    <form action="listrooms.php" method="POST">
+    <input type="submit" value="List Theatre Rooms">
+    </form>
+  <br>
+  <h2>Add Rooms</h2>
+    <form action="addroomsform.php" method="POST">
+    <input type="submit" value="Add A Theatre Room">
+    </form>
+  <br> 
+  <h2>Delete Rooms</h2>
+    <form action="chooserooms.php" method="POST">
+    <input type="hidden" name="method" value="Delete">
+    <input type="submit" value="Choose A Room to Delete">
+    </form>
+  <br>
+  <h2>Update Rooms</h2>
+    <form action="chooserooms.php" method="POST">
     <input type="hidden" name="method" value="Update">
-    <input type="submit" value="Choose Movies to Update">
-</form>
+    <input type="submit" value="Choose A Room to Update">
+    </form>
+</div>
+  <div id="tabs-4">
+  <h2>List Showings</h2>
+    <form action="listshowings.php" method="POST">
+    <input type="submit" value="List Showings">
+    </form>
+  <br>
+  <h2>Add Showings</h2>
+    <form action="addshowingsform.php" method="POST">
+    <input type="submit" value="Add A Showing">
+    </form>
+  <br>
+  <h2>Delete Showings</h2>
+    <form action="chooseshowings.php" method="POST">
+    <input type="hidden" name="method" value="Delete">
+    <input type="submit" value="Choose A Showing To Delete">
+    </form>
+  <br>
+  <h2>Update Showings</h2>
+    <form action="chooseshowings.php" method="POST">
+    <input type="hidden" name="method" value="Update">
+    <input type="submit" value="Choose A Showing to Update">
+    </form>
+  </div>
+  <div id="tabs-5">
+  <h2>List Customers</h2>
+    <form action="listcustomers.php" method="POST">
+    <input type="submit" value="List Customers">
+    </form>
+  <br>
+  <h2>Add Customers</h2>
+    <form action="addcustomersform.php" method="POST">
+    <input type="submit" value="Add A Customer">
+    </form>
+  <br>
+  <h2>Delete Customers</h2>
+    <form action="choosecustomers.php" method="POST">
+    <input type="hidden" name="method" value="Delete">
+    <input type="submit" value="Choose A Customer to Delete">
+    </form>
+  <br>
+  <h2>Update Customers</h2>
+    <form action="choosecustomers.php" method="POST">
+    <input type="hidden" name="method" value="Update">
+    <input type="submit" value="Choose A Customer to Update">
+    </form>
+  </div>
+</div>
 
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('#add-movies').on('click', '.round-button', function(){
-            var val = this.value;
-            if (val == "+") {
-                $(this).parents('tbody').append('<tr><td><input type="text" placeholder="Movie ID" name="movie-id[]" required="required" maxlength="3"></td><td><input type="text" placeholder="Title" name="movie-title[]" required="required" maxlength="50"></td><td><input type="text" placeholder="Year" name="movie-year[]" size="4" maxlength="4"></td><td><table><tr><td><input type="checkbox" name="movie-genre[]" value="Action"> Action</td><td><input type="checkbox" name="movie-genre[]" value="Animated"> Animated</td></tr><tr><td><input type="checkbox" name="movie-genre[]" value="Comedy"> Comedy</td><td><input type="checkbox" name="movie-genre[]" value="Drama"> Drama</td></tr><tr><td><input type="checkbox" name="movie-genre[]" value="Romance"> Romance</td><td><input type="checkbox" name="movie-genre[]" value="SciFi"> SciFi</td></tr></table></td><td><input type="button" value="-" class="round-button" disabled="disabled"> <input type="button" value="+" class="round-button"></td></tr>').find('.round-button[disabled=disabled]').removeAttr('disabled');
-            } else {
-                if ( $(this).parents('tbody').children('tr').length == 2 ) {
-                    $(this).parents('tbody').find('.round-button[value=-]').attr('disabled', 'disabled');
-                }
-                $(this).parents('tr').detach();
-            }
-        });
-    });
-</script>
 </body>
 </html>
+
