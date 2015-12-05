@@ -10,7 +10,7 @@
         if ($_POST['method']=="Delete") {
     // List movies
             if (mysqli_num_rows($result) > 0) {
-                echo '<form action="deletemovie.php" method="POST"><table><thead><tr><th></th><th>Movie ID</th><th>Title</th><th>Year</th></tr></thead><tbody>';
+                echo '<form action="deletemovie.php" method="POST" onsubmit="return confirm(\'Are you sure you want to delete the movie?\');"><table><thead><tr><th></th><th>Movie ID</th><th>Title</th><th>Year</th></tr></thead><tbody>';
                 // output data of each row
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<tr><td><input type="radio" name="themovies[]" required="required" value="' . $row['MovieID'] . '"></td><td>' . $row['MovieID'] . '</td><td>' . $row['MovieName'] . '</td><td>' . $row['Year'] . '</td></tr>';
