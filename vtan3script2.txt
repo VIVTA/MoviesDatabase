@@ -2,7 +2,7 @@ use vtan3db;
 
 load data infile '/tmp/fall2015data.txt' into table Movies
 fields terminated by',';
-insert into Movies values (112,"Pitch Perfect","2012");
+insert into Movies (MovieID,MovieName,Year) values (112,"Pitch Perfect","2012");
 select * from Movies;
 update Movies set Poster="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2000px-Star_Wars_Logo.svg.png" where MovieID="100";
 update Movies set Poster="http://brightcove.vo.llnwd.net/e1/pd/687883034/687883034_4329839866001_back-to-the-future--1-.jpg?pubId=687883034" where MovieID="111";
