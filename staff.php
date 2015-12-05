@@ -69,6 +69,10 @@
     <input type="hidden" name="method" value="Delete">
     <input type="submit" value="Choose Movie Genre to Delete">
     </form>
+    <h2>Update Movie Genres</h2>
+    <form action="choosegenres.php" method="POST">
+    <input type="hidden" name="method" value="Update">
+    <input type="submit" value="Choose Movie Genre to Update">
   </div>
   <div id="tabs-3">
   <h2>List Rooms</h2>

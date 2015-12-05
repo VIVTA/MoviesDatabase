@@ -1,0 +1,90 @@
+use vtan3db;
+
+load data infile '/tmp/fall2015data.txt' into table Movies
+fields terminated by',';
+insert into Movies values (112,"Pitch Perfect","2012");
+select * from Movies;
+update Movies set Poster="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2000px-Star_Wars_Logo.svg.png" where MovieID="100";
+update Movies set Poster="http://brightcove.vo.llnwd.net/e1/pd/687883034/687883034_4329839866001_back-to-the-future--1-.jpg?pubId=687883034" where MovieID="111";
+update Movies set Poster="https://upload.wikimedia.org/wikipedia/en/7/73/Two_weeks_notice_ver2.jpg" where MovieID="110";
+update Movies set Poster="http://cdn.traileraddict.com/content/sony-pictures/aloha-poster-2.jpg" where MovieID="103";
+update Movies set Poster="https://upload.wikimedia.org/wikipedia/en/0/05/Up_(2009_film).jpg" where MovieID="101";
+
+
+insert into Customers values (222,"Laura","Reid","F","lreid@csd.uwo.ca");
+insert into Customers values (223,"Vivian","Tan","F","vtan3@uwo.ca");
+insert into Customers values (224,"Bill","Clinton","M","billy@prez.com");
+insert into Customers values (225,"Hilary","Clinton","F","nextprez@pres.com");
+insert into Customers values (226,"Donald","Trump","M","nextprezalso@prez.com");
+insert into Customers values (227,"Chelsea","Clinton","F","firstdaug@prez.com");
+insert into Customers values (228,"Ivanka","Trump","F","apprentice@trump.com");
+insert into Customers values (229,"Sandra","Bullock","F","sandy@blindside.com");
+select * from Customers;
+
+insert into MovieGenres values (100,"Action");
+insert into MovieGenres values (100,"SciFi");
+insert into MovieGenres values (101,"Animated");
+insert into MovieGenres values (102,"Action");
+insert into MovieGenres values (103,"Romance");
+insert into MovieGenres values (104,"Action");
+insert into MovieGenres values (104,"SciFi");
+insert into MovieGenres values (105,"Action");
+insert into MovieGenres values (105,"SciFi");
+insert into MovieGenres values (106,"Drama");
+insert into MovieGenres values (107,"Comedy");
+insert into MovieGenres values (108,"Action");
+insert into MovieGenres values (109,"Comedy");
+insert into MovieGenres values (110,"Comedy");
+insert into MovieGenres values (110,"Romance");
+insert into MovieGenres values (111,"SciFi");
+insert into MovieGenres values (111,"Action");
+insert into MovieGenres values (111,"Comedy");
+insert into MovieGenres values (112,"Comedy");
+insert into MovieGenres values (112,"Musical");
+select * from MovieGenres;
+
+insert into TheatreRooms values (1,30);
+insert into TheatreRooms values (2,5);
+insert into TheatreRooms values (3,100);
+insert into TheatreRooms values (4,30);
+insert into TheatreRooms values (5,6);
+select * from TheatreRooms;
+
+insert into Showings values (333,"2015-02-11","21:30",100,1); 
+insert into Showings values (334,"2015-02-11","19:30",100,2); 
+insert into Showings values (335,"2015-02-11","19:00",101,3);
+insert into Showings values (337,"2015-03-12","19:00",102,1);
+insert into Showings values (338,"2015-03-12","21:00",103,1);
+insert into Showings values (339,"2015-03-13","19:00",103,2);
+insert into Showings values (340,"2015-03-20","19:00",103,1);
+insert into Showings values (341,"2015-03-20","21:00",104,1);
+insert into Showings values (346,"2015-03-22","20:30",107,2);
+insert into Showings values (345,"2015-03-22","21:00",108,3);
+insert into Showings values (342,"2015-03-20","19:00",109,2);
+insert into Showings values (344,"2015-03-21","19:00",110,1);
+insert into Showings values (347,"2015-03-23","22:00",110,1);
+insert into Showings values (336,"2015-02-11","21:00",111,2);
+insert into Showings values (350,"2015-03-24","19:00",112,3);
+select * from Showings;
+
+insert into Selection values (222,333,4.00,5);
+insert into Selection values (222,340,12.00,1);
+insert into Selection values (222,334,10.00,3);
+insert into Selection values (222,346,5.00,4);
+insert into Selection values (223,334,30.00,5);
+insert into Selection values (223,340,5.00,1);
+insert into Selection values (224,334,20.00,4);
+insert into Selection values (226,334,100.00,2);
+insert into Selection values (227,334,5.00,1);
+insert into Selection values (229,347,12.00,5);
+insert into Selection values (229,334,5.00,3);
+insert into Selection values (223,350,5.00,5);
+select * from Selection;
+
+select * from Customers;
+update Customers set FirstName = "Sue" where FirstName = "Ivanka";
+select * from Customers;
+
+select * from Selection;
+update Selection,Showings,Movies set Rating = "5" where Selection.ShowingID=Showings.ShowingID and Showings.MovieID=Movies.MovieID and MovieName = "Star Wars";
+select * from Selection;

@@ -24,9 +24,9 @@
     
         if ($_POST['method']=="Update") {
             if (mysqli_num_rows($result) > 0) {
-                echo '<form action="updatemovie.php" method="POST"><table><thead><tr><th></th><th>MovieID</th><th>Title</th><th>Genres</th></tr></thead><tbody>';
+                echo '<form action="updategenre.php" method="POST"><table><thead><tr><th></th><th>MovieID</th><th>Title</th><th>Genre</th></tr></thead><tbody>';
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<tr><td><input type="radio" name="thegenres[]" required="required" value="' . $row['MovieID'] . '"></td><td>' . $row['MovieID'] . '</td><td>' . $row['MovieName'] . '</td><td>' . $row['Genre'] . '</td></tr>';
+                    echo '<tr><td><input type="radio" name="thegenres[]" required="required" value="' . $row['MovieID'] . '|' . $row['Genre'] . '"></td><td>' . $row['MovieID'] . '</td><td>' . $row['MovieName'] . '</td><td>' . $row['Genre'] . '</td></tr>';
                 }
                 echo '</tbody></table><br><input type="submit" value="' . $_POST['method'] . ' Movies Genres"></form>';
             } else {
