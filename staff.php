@@ -73,6 +73,7 @@
     <form action="choosegenres.php" method="POST">
     <input type="hidden" name="method" value="Update">
     <input type="submit" value="Choose Movie Genre to Update">
+    </form>
   </div>
   <div id="tabs-3">
   <h2>List Rooms</h2>
