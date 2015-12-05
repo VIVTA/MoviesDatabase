@@ -7,23 +7,21 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <?php
-        include 'connectdb.php';
-    ?>
-    <h1>PSC - Ticket Desk</h1>
-    <hr>
-    <?php
-    	include 'inc/purchaseticket.inc.php';
-    	include 'inc/rateshowing.inc.php';
-    	include 'inc/filtershowings.inc.php';
-    	include 'inc/listviewedmovies.inc.php';
-    	include 'inc/viewcustomerprofile.inc.php';
-    	include 'inc/ticketsales.inc.php';
-    	include 'inc/moviespergenre.inc.php';
-    	include 'inc/topmovies.inc.php';
-    	mysqli_close($connection);
-    ?>
-</div>
+<?php
+    include 'connectdb.php';
+?>
+<h1>PSC - Ticket Desk</h1>
+<hr>
+<?php
+	include 'inc/purchaseticket.inc.php';
+	include 'inc/rateshowing.inc.php';
+	include 'inc/filtershowings.inc.php';
+	include 'inc/listviewedmovies.inc.php';
+	include 'inc/viewcustomerprofile.inc.php';
+	include 'inc/ticketsales.inc.php';
+	include 'inc/moviespergenre.inc.php';
+	include 'inc/topmovies.inc.php';
+	mysqli_close($connection);
+?>
 </body>
 </html>
