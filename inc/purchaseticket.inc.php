@@ -1,5 +1,5 @@
 <h2>Purchase a Ticket</h2>
-<form action="sellticket.php" method="POST">
+<form action="actions/sellticket.php" method="POST">
 	Sell <select name="customerid" required="required">
     	<option value="">Select a customer...</option>
         <?php

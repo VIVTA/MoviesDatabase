@@ -1,6 +1,6 @@
 <h2>List Showings</h2>
 <table>
-    <form action="listshowings.php" method="POST">
+    <form action="actions/listshowings.php" method="POST">
         <tr>
             <td>
                 <select name="genre">
@@ -19,7 +19,7 @@
             </td>
         </tr>
     </form>
-    <form action="listshowings.php" method="POST">
+    <form action="actions/listshowings.php" method="POST">
         <tr>
             <td>
                 List showings between <select name="day-lb">
@@ -107,7 +107,7 @@
             </td>
         </tr>
     </form>
-    <form action="listshowings.php" method="POST">
+    <form action="actions/listshowings.php" method="POST">
         <tr>
             <td>
                 <select name="theatre-rn">
@@ -130,7 +130,7 @@
             </td>
         </tr>
     </form>
-    <form action="listshowings.php" method="POST">
+    <form action="actions/listshowings.php" method="POST">
         <tr>
             <td>
                 <select name="movieid">

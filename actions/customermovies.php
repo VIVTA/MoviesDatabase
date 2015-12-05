@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PSC - Ticket Desk : List Viewed Movies</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <h1>PSC - Ticket Desk : List Viewed Movies</h1>
@@ -12,7 +12,7 @@
 	if (isset($_POST['submit']) && $_POST['customerid'] <> "") {
     	echo '<h2>Showings Viewed by Customer ' . $_POST['customerid'] . '</h2>';
     	
-    	include 'connectdb.php';
+    	include '../connectdb.php';
     	
     	$sql = 'SELECT Movies.MovieName, Rating FROM Customers, Selection, Showings, Movies WHERE Customers.CustomerID = Selection.CustomerID AND Selection.ShowingID = Showings.ShowingID AND Showings.MovieID = Movies.MovieID AND Customers.CustomerID = ' . $_POST['customerid'];
     	
@@ -24,14 +24,14 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<tr><td>' . $row['MovieName'] . '</td><td>' . starRating($row['Rating']) . '</td></tr>';
             }
-            echo '</tbody></table><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+            echo '</tbody></table><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
         
         mysqli_close($connection);
     	} else {
-        	echo '<p>Customer ' .  $_POST['customerid']. ' has not viewed any showings.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+        	echo '<p>Customer ' .  $_POST['customerid']. ' has not viewed any showings.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
         }
 	} else {
-    	echo '<p>Error: You must select a customer.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+    	echo '<p>Error: You must select a customer.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
 	}
 	
 	function starRating($strRating) {

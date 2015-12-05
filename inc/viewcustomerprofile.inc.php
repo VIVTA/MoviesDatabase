@@ -1,5 +1,5 @@
 <h2>View Customer Profile</h2>
-<form action="customerprofile.php" method="POST">
+<form action="actions/customerprofile.php" method="POST">
     <select name="customerid" required="required">
     	<option value="">Select a customer...</option>
         <?php

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PSC - Ticket Desk : List Showings</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../style.css">
 </head>
 <body class="clearfix">
 <h1>PSC - Ticket Desk : List Showings</h1>
@@ -14,7 +14,7 @@
         if ($_POST['filter'] == "movie") {
             
             if ($_POST['movieid'] <> "") {
-                include 'connectdb.php';
+                include '../connectdb.php';
                 
                 $posterSQL = 'SELECT Poster FROM Movies WHERE MovieID = ' . $_POST['movieid'];
                 
@@ -37,17 +37,17 @@
             	
             	$query = queryShowings($connection, $availableSQL, $unavailableSQL);
             	if ($query === False) {
-                	echo '<p>There are no showings for the selected movie.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                	echo '<p>There are no showings for the selected movie.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
             	}
                 
             	mysqli_close($connection);
             } else {
-                echo '<p>Error: You must select a movie.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                echo '<p>Error: You must select a movie.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
             }
         } elseif ($_POST['filter'] == "genre") {
             
             if ($_POST['genre'] <> "") {
-                include 'connectdb.php';
+                include '../connectdb.php';
                 
                 echo '<h2>' . $_POST['genre'] . ' Showings</h2>';
                 
@@ -59,17 +59,17 @@
             	
             	$query = queryShowings($connection, $availableSQL, $unavailableSQL);
             	if ($query === False) {
-                	echo '<p>There are no showings for the selected genre.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                	echo '<p>There are no showings for the selected genre.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
             	}
                 
             	mysqli_close($connection);
             } else {
-                echo '<p>Error: You must select a genre.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                echo '<p>Error: You must select a genre.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
             }
         } elseif ($_POST['filter'] == "theatre") {
             
             if ($_POST['theatre-rn'] <> "") {
-                include 'connectdb.php';
+                include '../connectdb.php';
                 
                 echo '<h2>Showings in Theatre ' . $_POST['theatre-rn'] . '</h2>';
                 
@@ -81,17 +81,17 @@
             	
             	$query = queryShowings($connection, $availableSQL, $unavailableSQL);
             	if ($query === False) {
-                	echo '<p>There are no showings in the selected theatre.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                	echo '<p>There are no showings in the selected theatre.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
             	}
                 
             	mysqli_close($connection);
             } else {
-                echo '<p>Error: You must select a theatre.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                echo '<p>Error: You must select a theatre.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
             }
         } elseif ($_POST['filter'] == "date") {
             
             if ($_POST['day-lb'] <> "" && $_POST['month-lb'] <> "" && $_POST['year-lb'] <> "" && $_POST['day-ub'] <> "" && $_POST['month-ub'] <> "" && $_POST['year-ub'] <> "" && strtotime($_POST['year-lb'] . $_POST['month-lb'] . $_POST['day-lb']) <= strtotime($_POST['year-ub'] . $_POST['month-ub'] . $_POST['day-ub'])) {
-                include 'connectdb.php';
+                include '../connectdb.php';
                 
                 echo '<h2>Showings between ' . $_POST['year-lb'] . '-' . $_POST['month-lb'] . '-' . $_POST['day-lb'] . ' and ' . $_POST['year-ub'] . '-' . $_POST['month-ub'] . '-' . $_POST['day-ub'] . '</h2>';
                 
@@ -103,12 +103,12 @@
             	
             	$query = queryShowings($connection, $availableSQL, $unavailableSQL);
             	if ($query === False) {
-                	echo '<p>There are no showings between the selected dates.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                	echo '<p>There are no showings between the selected dates.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
             	}
                 
             	mysqli_close($connection);
             } else {
-                echo '<p>Error: You must select both dates and the first date must be before than or equal to the second.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                echo '<p>Error: You must select both dates and the first date must be before than or equal to the second.</p><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
             }
         }
     }
@@ -129,10 +129,10 @@
                 while ($row = mysqli_fetch_assoc($unavailableResult)) {
                     echo '<tr><td>' . $row['ShowingID'] . '</td><td>' . $row['date'] . '</td><td>' . $row['time'] . '</td><td>' . $row['RoomNumber'] . '</td><td>' . $row['MovieName'] . '</td><td>' . $row['Year'] . '</td><td>(Sold Out)</td></tr>';
                 }
-                echo '</tbody></table><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                echo '</tbody></table><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
                 return True;
             } else {
-                echo '</tbody></table><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                echo '</tbody></table><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
                 return True;
             }
     	} else {
@@ -144,7 +144,7 @@
                 while ($row = mysqli_fetch_assoc($unavailableResult)) {
                     echo '<tr><td>' . $row['ShowingID'] . '</td><td>' . $row['date'] . '</td><td>' . $row['time'] . '</td><td>' . $row['RoomNumber'] . '</td><td>' . $row['MovieName'] . '</td><td>' . $row['Year'] . '</td><td>(Sold Out)</td></tr>';
                 }
-                echo '</tbody></table><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
+                echo '</tbody></table><p><a href="../ticketing.php">&larr; Return to ticketing page</a></p>';
                 return True;
             } else {
                 return False;

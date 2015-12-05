@@ -1,5 +1,5 @@
 <h2>List Viewed Movies</h2>
-<form action="customermovies.php" method="POST">
+<form action="actions/customermovies.php" method="POST">
     <select name="customerid" required="required">
     	<option value="">Select a customer...</option>
         <?php

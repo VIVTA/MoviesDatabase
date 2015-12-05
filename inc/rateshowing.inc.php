@@ -1,5 +1,5 @@
 <h2>Rate a Showing</h2>
-<form action="updaterating.php" method="POST">
+<form action="actions/updaterating.php" method="POST">
     <select name="customerid" required="required" id="rating-customer">
     	<option value="">Select a customer...</option>
         <?php
