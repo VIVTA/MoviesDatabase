@@ -22,7 +22,7 @@
     	        
         mysqli_close($connection);
     } else {
-        echo '<p>Error: You must fill in all fields of the "Rate a Showing" form.</p>';
+        echo '<p>Error: You must fill in all fields of the "Rate a Showing" form.</p><p><a href="ticketing.php">&larr; Return to ticketing page</a></p>';
     }
 ?>
 </body>

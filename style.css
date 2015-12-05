@@ -23,10 +23,6 @@ h1 {
 	font-weight: bold;
 }
 
-p {
-    text-align: center;
-}
-
 a {
     color: #FD4;
     text-decoration: none;
@@ -68,8 +64,20 @@ input.star:checked ~ label.star:before {
     transition: all .25s;
 }
 
-label.star:hover{
-    transform: rotate(-15deg) scale(1.3);
+label.star:hover {
+    -webkit-transform: rotate(-15deg) scale(1.3);
+        -ms-transform: rotate(-15deg) scale(1.3);
+            transform: rotate(-15deg) scale(1.3);
+}
+
+.star[disabled=disabled] + label.star {
+    cursor: default;
+}
+
+.star[disabled=disabled] + label.star:hover {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
 }
 
 label.star:before{
@@ -79,4 +87,42 @@ label.star:before{
 
 #bin {
     display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+img {
+    margin-right: 20px;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+img + table {
+    width: calc(100% - 260px);
+}
+
+thead {
+    text-align: left;
+    color: #Fd4;
+}
+
+thead tr {
+    border-bottom: thin solid #444;
+}
+
+thead tr th {
+    padding: 5px 0;
+}
+
+tbody tr:first-child td {
+    padding-top: 5px;
 }

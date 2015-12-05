@@ -16,6 +16,12 @@
     <?php
     	include 'purchaseticket.inc.php';
     	include 'rateshowing.inc.php';
+    	include 'filtershowings.inc.php';
+    	include 'listviewedmovies.inc.php';
+    	include 'viewcustomerprofile.inc.php';
+    	include 'ticketsales.inc.php';
+    	include 'moviespergenre.inc.php';
+    	include 'topmovies.inc.php';
     	mysqli_close($connection);
     ?>
 </div>
