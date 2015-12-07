@@ -34,7 +34,7 @@
       if (!mysqli_query($connection, $query2)) {
         die("Error: insert failed" . mysqli_error($connection));
         }
-        echo "<p>Genres for movie " . $movieID . "  was added!</p>";
+        echo "<p>Genre (" . $movieGenres[$i] . ") for movie " . $movieID . "  was added!</p>";
       }
 
    mysqli_close($connection);
