@@ -28,7 +28,10 @@
                                     $posterpic = "upload/" . $_FILES["file"]["name"];
                         } // end of else
             } // end of else
-     } else {
-            echo "Invalid file";
+     } elseif ($_FILES["file"]["name"]) {
+            echo "<p>Invalid file</p>";
+            $posterpic = "NULL";
+    } else {
+        $posterpic = "NULL";
     } //end of else
 ?>
