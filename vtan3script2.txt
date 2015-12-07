@@ -4,11 +4,11 @@ load data infile '/tmp/fall2015data.txt' into table Movies
 fields terminated by',';
 insert into Movies (MovieID,MovieName,Year) values (112,"Pitch Perfect","2012");
 select * from Movies;
-update Movies set Poster="https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg" where MovieID="100";
-update Movies set Poster="https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg" where MovieID="111";
-update Movies set Poster="https://upload.wikimedia.org/wikipedia/en/7/73/Two_weeks_notice_ver2.jpg" where MovieID="110";
-update Movies set Poster="http://cdn.traileraddict.com/content/sony-pictures/aloha-poster-2.jpg" where MovieID="103";
-update Movies set Poster="https://upload.wikimedia.org/wikipedia/en/0/05/Up_(2009_film).jpg" where MovieID="101";
+update Movies set Poster="/MoviesDatabase/back-end/inc/upload/StarWarsMoviePoster1977.jpg" where MovieID="100";
+update Movies set Poster="/MoviesDatabase/back-end/inc/upload/Back_to_the_Future.jpg" where MovieID="111";
+update Movies set Poster="/MoviesDatabase/back-end/inc/upload/Two_weeks_notice_ver2.jpg" where MovieID="110";
+update Movies set Poster="/MoviesDatabase/back-end/inc/upload/aloha-poster-2.jpg" where MovieID="103";
+update Movies set Poster="/MoviesDatabase/back-end/inc/upload/Up_(2009_film).jpg" where MovieID="101";
 
 
 insert into Customers values (222,"Laura","Reid","F","lreid@csd.uwo.ca");
