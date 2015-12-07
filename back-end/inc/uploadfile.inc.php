@@ -18,14 +18,15 @@
                         echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
             } else {
                         $uploadFolder->createFolder($uploadholder);
-                        if (file_exists("upload/" . $_FILES["file"]["name"])) {
-                                    echo '<p><hr>';
+                        if (file_exists($uploadholder . "/" . $_FILES["file"]["name"])) {
+                                    echo '<p>Error: ';
                                     echo $_FILES["file"]["name"] . " already exists. ";
-                                    echo '<p><hr>';
+                                    echo '</p>';
                                     $posterpic = "NULL";
+                                    $cancelAdd = True;
                         } else {
-                                    move_uploaded_file($_FILES["file"]["tmp_name"],"upload/" . $_FILES["file"]["name"]);
-                                    $posterpic = "upload/" . $_FILES["file"]["name"];
+                                    move_uploaded_file($_FILES["file"]["tmp_name"], $uploadholder . "/" . $_FILES["file"]["name"]);
+                                    $posterpic = "/MoviesDatabase/back-end/inc/upload/" . $_FILES["file"]["name"];
                         } // end of else
             } // end of else
      } elseif ($_FILES["file"]["name"]) {
