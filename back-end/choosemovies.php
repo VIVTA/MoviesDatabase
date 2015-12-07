@@ -19,7 +19,7 @@
                 echo '<form action="actions/deletemovie.php" method="POST" onsubmit="return confirm(\'Are you sure?\');"><table><thead><tr><th></th><th>Movie ID</th><th>Title</th><th>Year</th></tr></thead><tbody>';
                 // output data of each row
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<tr><td><input type="radio" name="themovies[]" required="required" value="' . $row['MovieID'] . '"></td><td>' . $row['MovieID'] . '</td><td>' . $row['MovieName'] . '</td><td>' . $row['Year'] . '</td></tr>';
+                    echo '<tr><td><input type="radio" name="movieid" required="required" value="' . $row['MovieID'] . '"></td><td>' . $row['MovieID'] . '</td><td>' . $row['MovieName'] . '</td><td>' . $row['Year'] . '</td></tr>';
                 }
                 echo '</tbody></table><br><input type="submit" value="' . $_POST['method'] . ' Movies"></form>';
             } else {
@@ -32,7 +32,7 @@
                 echo '<form action="actions/updatemovie.php" method="POST"><table><thead><tr><th></th><th>MovieID</th><th>Title</th><th>Year</th></tr></thead><tbody>';
                 // output data of each row
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<tr><td><input type="radio" name="themovies[]" required="required" value="' . $row['MovieID'] . '"></td><td>' . $row['MovieID'] . '</td><td>' . $row['MovieName'] . '</td><td>' . $row['Year'] . '</td></tr>';
+                    echo '<tr><td><input type="radio" name="movieid" required="required" value="' . $row['MovieID'] . '"></td><td>' . $row['MovieID'] . '</td><td>' . $row['MovieName'] . '</td><td>' . $row['Year'] . '</td></tr>';
                 }
                 echo '</tbody></table><br><input type="submit" value="' . $_POST['method'] . ' Movies"></form>';
             } else {

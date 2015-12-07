@@ -11,24 +11,17 @@
 <?php
     include '../../connectdb.php';
     
-    function IsChecked($chkname,$connection)  {
-        if (!empty($_POST[$chkname]))  {
-            foreach($_POST[$chkname] as $value) {
-                $delsql="delete from Movies where MovieID='" . $value . "'";
-                deleteMovie($delsql,$connection,$value);
-            }
+    if (isset($_POST['movieid'])) {
+        $delsql="delete from Movies where MovieID='" . $_POST['movieid'] . "'";
+        if (mysqli_query($connection,$delsql)) {
+            echo "<p>Movie " . $_POST['movieid'] . " deleted successfully!</p>";
+        } else {
+            echo "<p>Problem with deleting movie: " . mysqli_error($connnection) . "</p>";
         }
+    } else {
+        echo '<p>Error: you must select a movie to delete</p>';
     }
     
-    function deleteMovie($deleteCommand,$conn,$val) {
-        if (mysqli_query($conn,$deleteCommand)) {
-            echo "<p>Movie " . $val . " deleted successfully!</p>";
-        } else {
-            echo "<p>Problem with deleting movie: " . mysqli_error($conn) . "</p>";
-        }
-    } //end of deleteMovie function
-    
-    IsChecked('themovies',$connection);
     mysqli_close($connection);
 ?>
 <p><a href="../staff.php">&larr; Return to staff page</a></p>
