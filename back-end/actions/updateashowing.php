@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <title>PSC - Staff : Update Showing</title>
@@ -30,4 +32,5 @@
    }
 ?>
 <p><a href="../staff.php">&larr; Return to staff page</a></p>
-
+</body>
+</html>

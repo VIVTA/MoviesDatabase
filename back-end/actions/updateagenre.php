@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <title>PSC - Staff : Update Movie Genre</title>
@@ -24,3 +26,5 @@
    mysqli_close($connection);
 ?>
 <p><a href="../staff.php">&larr; Return to staff page</a></p>
+</body>
+</html>
