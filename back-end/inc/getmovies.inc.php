@@ -14,7 +14,11 @@
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<input type="radio" name="movies" required="required" value="';
             echo $row["MovieID"];
-            echo '">' . $row["MovieName"]. "<br>";
+            if ($showingmovie == $row["MovieID"]) {
+                echo '" checked>' . $row["MovieName"]. "<br>";
+            } else {
+                echo '">' . $row["MovieName"]. "<br>";
+            }
         }
         $moviesReturned = True;
     } else {

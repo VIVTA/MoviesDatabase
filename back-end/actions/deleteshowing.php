@@ -11,23 +11,29 @@
 <?php
     include '../../connectdb.php';
     
-    function IsChecked($chkname,$connection)  {
-        if (!empty($_POST[$chkname]))  {
-            foreach($_POST[$chkname] as $value) {
-                $delsql="delete from Showings where ShowingID='" . $value . "'";
-                deleteShowing($delsql,$connection,$value);
+    if (isset($_POST['theshowings'])) {
+        
+        function IsChecked($chkname,$connection)  {
+            if (!empty($_POST[$chkname]))  {
+                foreach($_POST[$chkname] as $value) {
+                    $delsql="delete from Showings where ShowingID='" . $value . "'";
+                    deleteShowing($delsql,$connection,$value);
+                }
             }
         }
+        
+        function deleteShowing($deleteCommand,$conn,$val) {
+            if (mysqli_query($conn,$deleteCommand)) {
+                echo "<p>Showing " . $val . " deleted successfully</p>";
+            } else {
+                echo "<p>Problem with deleting showing: " . mysqli_error($conn) . "</p>";
+            }
+        }    
+        IsChecked('theshowings',$connection);
+    } else {
+        echo '<p>Error: you must select a showing.</p>';
     }
     
-    function deleteShowing($deleteCommand,$conn,$val) {
-        if (mysqli_query($conn,$deleteCommand)) {
-            echo "<p>Showing " . $val . " deleted successfully</p>";
-        } else {
-            echo "<p>Problem with deleting showing: " . mysqli_error($conn) . "</p>";
-        }
-    }    
-    IsChecked('theshowings',$connection);
     mysqli_close($connection);
 ?>
 <p><a href="../staff.php">&larr; Return to staff page</a></p>

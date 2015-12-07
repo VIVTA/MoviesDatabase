@@ -16,7 +16,11 @@
    while ($row = mysqli_fetch_assoc($result)) {
         echo '<input type="radio" name="rooms" required="required" value="';
         echo $row["RoomNumber"];
-        echo '">' . $row["RoomNumber"]. "<br>";
+        if ($showingroom == $row["RoomNumber"]) {
+            echo '" checked>' . $row["RoomNumber"]. "<br>";
+        } else {
+            echo '">' . $row["RoomNumber"]. "<br>";
+        }
    }
    mysqli_free_result($result);
 ?>
