@@ -1,3 +1,5 @@
+<!DOCTTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>PSC - Staff : Update Room</title>
@@ -8,20 +10,27 @@
 <hr>
 <?php
    include '../../connectdb.php';
-   $roomnumb = $_POST['roomnum'];
-   $newcap = $_POST['roomcap'];
-   $query = 'Update TheatreRooms set Capacity="' . $newcap . '" where RoomNumber="' . $roomnumb . '"';
-   $result = mysqli_query($connection,$query);
-   if (!$result) {
-      die("Database query failed");
-   }
-   if (mysqli_query($connection, $query)) {
-      echo "<p>Room " . $roomnumb . " updated successfully</p>";
+   
+   if ($_POST['roomcap'] <> "") {
+       $roomnumb = $_POST['roomnum'];
+       $newcap = $_POST['roomcap'];
+       $query = 'Update TheatreRooms set Capacity="' . $newcap . '" where RoomNumber="' . $roomnumb . '"';
+       $result = mysqli_query($connection,$query);
+       if (!$result) {
+          die("Database query failed");
+       }
+       if (mysqli_query($connection, $query)) {
+          echo "<p>Room " . $roomnumb . " updated successfully</p>";
+       } else {
+          echo "<p>Error when updating room: " . mysqli_error($connection) . "</p>";
+       }
    } else {
-      echo "<p>Error when updating room: " . mysqli_error($connection) . "</p>";
+       echo '<p>Error: you must enter a room capacity.</p>';
    }
    mysqli_close($connection);
 ?>
 
 <p><a href="../staff.php">&larr; Return to staff page</a></p>
 
+</body>
+</html>

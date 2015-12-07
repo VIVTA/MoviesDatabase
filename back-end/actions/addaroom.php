@@ -12,22 +12,26 @@
    include '../../connectdb.php';
 ?>
 <?php
-   $roomCapacity = $_POST["newroomcap"];
-   $roomNumber = $_POST["RoomNumber"];
-   $query = 'select max(RoomNumber) as maxid from TheatreRooms';
-   $result=mysqli_query($connection,$query);
-   if (!$result) {
-        die("database max query failed.");
-        }
-   $row=mysqli_fetch_assoc($result);
-   $newkey = intval($row["maxid"]) + 1;
-   $RoomID = (string)$newkey;
-   $query = 'insert into TheatreRooms values("' . $RoomID . '","' . $roomCapacity . '")';
-   if (!mysqli_query($connection, $query)) {
-        die("Error: insert failed" . mysqli_error($connection));
-        }
-        echo "<p>Room " . $RoomID . " was added!</p>";
-
+   if ($_POST['newroomcap'] <> "") {
+       $roomCapacity = $_POST["newroomcap"];
+       $roomNumber = $_POST["RoomNumber"];
+       $query = 'select max(RoomNumber) as maxid from TheatreRooms';
+       $result=mysqli_query($connection,$query);
+       if (!$result) {
+            die("database max query failed.");
+            }
+       $row=mysqli_fetch_assoc($result);
+       $newkey = intval($row["maxid"]) + 1;
+       $RoomID = (string)$newkey;
+       $query = 'insert into TheatreRooms values("' . $RoomID . '","' . $roomCapacity . '")';
+       if (!mysqli_query($connection, $query)) {
+            die("Error: insert failed" . mysqli_error($connection));
+            }
+            echo "<p>Room " . $RoomID . " was added!</p>";
+   } else {
+       echo '<p>Error: you must enter a room capacity.</p>';
+   }
+   
    mysqli_close($connection);
 ?>
 <p><a href="../staff.php">&larr; Return to staff page</a></p>
