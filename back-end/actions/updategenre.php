@@ -27,5 +27,6 @@
 <br>
 <br>
 <input type="submit" value="Update this Genre"><br>
+</form>
 </body>
 </html>

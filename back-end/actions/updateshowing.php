@@ -30,5 +30,6 @@ Showing Room: <?php include '../inc/getrooms.inc.php' ?>
 <input type="hidden" name="showid" value= "<?php echo( htmlspecialchars( $selected_showing)); ?>" />
 <br>
 <input type="submit" value="Update this Showing"><br>
+</form>
 </body>
 </html>

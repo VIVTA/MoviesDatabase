@@ -23,5 +23,6 @@ Movie Year:  <input type="number" name="movyear" size="4" maxlength="4" value="<
 
 <br>
 <input type="submit" value="Update this movie"><br>
+</form>
 </body>
 </html>

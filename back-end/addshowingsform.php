@@ -25,5 +25,6 @@ Showing Movie: <br>
 Showing Room: <?php include 'inc/getrooms.inc.php' ?>
 <br>
 <input type="submit" value="Add this Showing"><br>
+</form>
 </body>
 </html>

@@ -18,5 +18,6 @@ Customer Sex: <input type="text" name="cussex" maxlength="1" value="" />
 Customer Email: <input type="text" name="cusemail" maxlength="100" value="" />
 <br>
 <input type="submit" value="Add this customer"><br>
+</form>
 </body>
 </html>

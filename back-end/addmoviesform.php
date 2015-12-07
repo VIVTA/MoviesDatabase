@@ -42,6 +42,5 @@
         <p class="caption">* Required</p>
         <input type="submit" value="Add Movies">
     </form>
-
 </body>
 </html>

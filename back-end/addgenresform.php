@@ -24,6 +24,6 @@
 <br>
 <br>
 <input type="submit" value="Add Movies">
-
+</form>
 </body>
 </html>

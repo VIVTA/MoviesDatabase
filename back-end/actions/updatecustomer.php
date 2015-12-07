@@ -26,5 +26,6 @@ Customer Email: <input type="text" name="cusemail" maxlength="100" value= "<?php
 <input type="hidden" name="cusid" value= "<?php echo( htmlspecialchars( $selected_customer)); ?>" />
 <br>
 <input type="submit" value="Update this customer"><br>
+</form>
 </body>
 </html>

@@ -18,5 +18,6 @@ Room Capacity: <input type="number" name="roomcap" value="<?php echo ( htmlspeci
 <input type="hidden" name="roomnum" value="<?php echo ( htmlspecialchars( $selected_room)); ?>" />
 <input type="submit" value="Update this room">
 <br>
+</form>
 </body>
 </html>

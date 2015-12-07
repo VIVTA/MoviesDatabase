@@ -14,5 +14,6 @@ Room Capacity: <input type="number" name="newroomcap" value="<?php echo ( htmlsp
 <br>
 <input type="submit" value="Add this room">
 <br>
+</form>
 </body>
 </html>
