@@ -17,7 +17,7 @@
         if ($_POST['method']=="Delete") {
     // List movies
             if (mysqli_num_rows($result) > 0) {
-                echo '<form action="actions/deleteroom.php" method="POST"><table><thead><tr><th></th><th>RoomNumber</th><th>Capacity</th></tr></thead><tbody>';
+                echo '<form action="actions/deleteroom.php" method="POST" onsubmit="return confirm(\'Are you sure?\');"><table><thead><tr><th></th><th>RoomNumber</th><th>Capacity</th></tr></thead><tbody>';
                 // output data of each row
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<tr><td><input type="radio" name="therooms[]" required="required" value="' . $row['RoomNumber'] . '"></td><td>' . $row['RoomNumber'] . '</td><td>' . $row['Capacity'] . '</td></tr>';

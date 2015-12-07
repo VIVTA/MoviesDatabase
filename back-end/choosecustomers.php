@@ -14,7 +14,7 @@
             
         if ($_POST['method']=="Delete") {
             if (mysqli_num_rows($result) > 0) {
-                echo '<form action="actions/deletecustomer.php" method="POST"><table><thead><tr><th></th><th>CustomerID</th><th>FirstName</th><th>LastName</th><th>Sex</th><th>Email</th></tr></thead><tbody>';
+                echo '<form action="actions/deletecustomer.php" method="POST" onsubmit="return confirm(\'Are you sure?\');"><table><thead><tr><th></th><th>CustomerID</th><th>FirstName</th><th>LastName</th><th>Sex</th><th>Email</th></tr></thead><tbody>';
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<tr><td><input type="radio" name="thecustomers[]" required="required" value="' . $row['CustomerID'] . '"></td><td>' . $row['CustomerID'] . '</td><td>' . $row['FirstName'] . '</td><td>' . $row['LastName'] . '</td><td>' . $row['Sex'] . '</td><td>' . $row['Email'] . '</td></tr>';
                 }
