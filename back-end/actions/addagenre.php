@@ -11,19 +11,22 @@
 <?php
    include '../../connectdb.php';
 ?>
-<ol>
 <?php
-   $movie = $_POST["movies"];
-   $genre = $_POST["movie-genre"];
-   $query = 'insert into MovieGenres values("' . $movie . '","' . $genre . '")';
-   if (!mysqli_query($connection, $query)) {
-        die("Error: insert failed" . mysqli_error($connection));
+    $movie = $_POST["movies"];
+    $genre = $_POST["movie-genre"];
+   
+    if (isset($movie) && isset($genre)) {
+   
+        $query = 'insert into MovieGenres values("' . $movie . '","' . $genre . '")';
+        if (!mysqli_query($connection, $query)) {
+            die("Error: insert failed - " . mysqli_error($connection));
         }
-        echo "Genre " . $genre . " for Movie " . $movie . " was added!";
-
+            echo "<p>Genre " . $genre . " for Movie " . $movie . " was added!</p>";
+    } else {
+        echo '<p>Error: you must select a movie and genre.</p>';
+    }
    mysqli_close($connection);
 ?>
-</ol>
 <p><a href="../staff.php">&larr; Return to staff page</a></p>
 </body>
 
