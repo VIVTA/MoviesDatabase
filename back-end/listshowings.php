@@ -25,6 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 echo "</tbody></table>";
 mysqli_free_result($result);
+mysqli_close($connection);
 ?>
 <p><a href="staff.php">&larr; Return to staff page</a></p>
 
