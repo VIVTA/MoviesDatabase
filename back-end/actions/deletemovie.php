@@ -23,10 +23,12 @@
             if (mysqli_num_rows($getPosterResult) > 0) {
                 while ($row = mysqli_fetch_assoc($getPosterResult)) {
                     // delete poster file
-                    if (unlink($_SERVER['DOCUMENT_ROOT'] . $row['Poster'])) {
-                        echo '<p>Deleted movie poster file.</p>';
-                    } else {
-                        echo '<p>Error deleting movie poster file.</p>';
+                    if ($row['Poster'] <> "" && $row['Poster'] <> null && $row['Poster'] <> "NULL") {
+                        if (unlink($_SERVER['DOCUMENT_ROOT'] . $row['Poster'])) {
+                            echo '<p>Deleted movie poster file.</p>';
+                        } else {
+                            echo '<p>Error deleting movie poster file.</p>';
+                        }
                     }
                 }
             }
